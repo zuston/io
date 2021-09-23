@@ -518,7 +518,7 @@ hdfsFS Connect(tf_hdfs_filesystem::HadoopFileSystemImplementation* hadoop_file,
   std::string cacheKey(scheme);
   if (scheme == "file") {
     namenode = "";
-  } else if (scheme == "viewfs") {
+  } else if (scheme == "viewfs" || scheme == "qbfs") {
     char* defaultFS = nullptr;
     libhdfs->hdfsConfGetStr("fs.defaultFS", &defaultFS);
     std::string defaultScheme, defaultCluster, defaultPath;
